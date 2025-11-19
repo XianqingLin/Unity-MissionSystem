@@ -1,5 +1,4 @@
-﻿
-namespace Gameplay.MissionSystem
+﻿namespace Gameplay.MissionSystem
 {
     /// <summary>任务奖励</summary>
     public abstract class MissionReward
