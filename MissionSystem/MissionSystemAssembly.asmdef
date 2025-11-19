@@ -1,0 +1,23 @@
+{
+    "name": "MissionSystemAssembly",
+    "rootNamespace": "Gameplay.MissionSystem",
+    "references": [
+        "Framework",
+        "UniTask",
+        "ResourceManager",
+        "Bootstrap",
+        "NodeCanvas",
+        "ParadoxNotion",
+        "Framework.Event",
+        "Unity.Addressables.Editor"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
