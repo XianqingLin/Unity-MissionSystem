@@ -47,7 +47,7 @@ namespace Gameplay.MissionSystem
             }
 
 #if UNITY_EDITOR
-            public int EditorCurrent => count;
+            public int Count => count;
 #endif
         }
 
@@ -55,11 +55,6 @@ namespace Gameplay.MissionSystem
         public GameEventType Type { get => type; set => type = value; }
         public string Args { get => args; set => args = value; }
         public int Count { get => count; set => count = value; }
-
-
-        public int EditorTarget => count;
-        public GameEventType EditorEventType => type;
-        public string EditorArgs => args;
 #endif
     }
 }

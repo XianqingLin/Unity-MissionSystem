@@ -64,11 +64,11 @@ namespace Gameplay.MissionSystem
             {
                 if (!mission.SendMessage(message, out var hasStatusChanged))
                 {
-                    if (hasStatusChanged) _OnMissionStatusChanged(mission, false);
+                    if (hasStatusChanged) OnMissionStatusChanged(mission, false);
                     continue;
                 }
 
-                _OnMissionStatusChanged(mission, true);
+                OnMissionStatusChanged(mission, true);
                 mission.ApplyReward();
                 queueToRemove.Enqueue(mission);
             }
@@ -101,7 +101,7 @@ namespace Gameplay.MissionSystem
             return component is not null && components.Remove(component);
         }
 
-        private void _OnMissionStatusChanged(Mission<T> mission, bool isFinished)
+        private void OnMissionStatusChanged(Mission<T> mission, bool isFinished)
         {
             foreach (var component in components)
                 component.OnMissionStatusChanged(mission, isFinished);

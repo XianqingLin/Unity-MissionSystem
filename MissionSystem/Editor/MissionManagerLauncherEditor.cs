@@ -57,7 +57,7 @@ public class MissionManagerLauncherEditor : Editor, IMissionSystemComponent<obje
             {
                 var handle = mission.EditorUnfinishedHandles
                                     .FirstOrDefault(h => ReferenceEquals(h.Require, cmr));
-                int current = handle is CommonMissionRequire.Handle ch ? ch.EditorCurrent : cmr.EditorTarget;
+                int current = handle is CommonMissionRequire.Handle ch ? ch.Count : cmr.Count;
                 return new RequirementSnap(cmr, current, title);
             })
             .ToList();
@@ -155,10 +155,10 @@ public class MissionManagerLauncherEditor : Editor, IMissionSystemComponent<obje
         public RequirementSnap(CommonMissionRequire cmr, int current, string title)
         {
             Title = title;
-            Desc = $"{cmr.EditorEventType}（{cmr.EditorArgs}）";
+            Desc = $"{cmr.Type}（{cmr.Args}）";
             Current = current;
-            Target = cmr.EditorTarget;
-            Finished = current >= cmr.EditorTarget;
+            Target = cmr.Count;
+            Finished = current >= cmr.Count;
         }
     }
 }
